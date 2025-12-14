@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body onload="cargarApp()">
+
+    <!-- CABECERO -->
+    <div class="cabecero">
+        <div class="presupuesto">
+
+            <div class="presupuesto_titulo">
+                Presupuesto Disponible
+            </div>
+
+            <div class="presupuesto_valor" id="presupuesto">
+            
+            </div>
+
+            <!-- INGRESOS -->
+            <div class="presupuesto_ingreso limpiarEstilos">
+
+                <div class="presupuesto_ingreso--texto">
+                    Ingresos
+                </div>
+
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id="ingresos"></div>
+                    <div class="presupuesto_ingreso--porcentaje"></div>
+                </div>
+
+            </div>
+
+            <!-- EGRESOS -->
+            <div class="presupuesto_egreso limpiarEstilos">
+
+                <div class="presupuesto_egreso--texto">
+                    Egresos
+                </div>
+
+                <div class="derecha limpiarEstilos">
+                    <div class="presupuesto_egreso--valor" id="egresos"></div>
+                 <div class="presupuesto_egreso--porcentaje" id="porcentaje"></div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <form id="forma" onsubmit="return false">
+
+        <div class="agregar">
+
+            <div class="agregar_contenedor">
+
+               <!--crear selector-->
+                <select class="agregar_tipo" id="tipo" name="tipo">
+                    <option value="ingreso" selected>+</option>
+                    <option value="egreso">-</option>
+                </select>
+
+                <!-- agregar descripcion y valor-->
+                <input type="text" class="agregar_descripcion" id="descripcion" name="descripcion" placeholder="Agregar Descripción">
+
+                <input type="number" class="agregar_valor" id="valor" name="valor" placeholder="Valor" step="any">
+
+                <!-- boton  -->
+                <button class="agregar_btn" type="button" onclick="agregarDato()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <!-- CONTENEDOR -->
+    <div class="contenedor limpiarEstilos">
+
+        <!-- INGRESO -->
+        <div class="ingreso">
+            <h2 class="ingreso_titulo">Ingresos</h2>
+             <div id="lista-ingresos"></div>
+        </div>
+
+    <!-- EGRESOS -->
+        <div class="egreso">
+
+            <h2 class="egreso_titulo">Egresos</h2>
+
+           
+            <div id="lista-egresos"></div>
+
+        </div>
+
+    </div>
+
+    <!-- icono -->
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- SCRIPTS JS -->
+    <script src="js/Dato.js"></script>
+    <script src="js/Ingreso.js"></script>
+    <script src="js/Egreso.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
