@@ -1,13 +1,7 @@
 // Arreglo ingreso
-const ingresos = [
-    new Ingreso("Salario", 20000),
-    new Ingreso("Venta auto", 50000)
-];
+const ingresos = [];
 // Arreglo egreso
-const egresos = [
-    new Egreso("Renta", 4000),
-    new Egreso("Ropa", 800)
-];
+const egresos = [];
 
 
 //Funcion totalIngresos 
@@ -50,7 +44,10 @@ const cargarApp = () => {
 // funcion cargar Cabecero
 const cargarCabecero = () => {
     let presupuesto = totalIngresos() - totalEgresos();
-    let porcentajeEgreso = totalEgresos() / totalIngresos();
+   let porcentajeEgreso = totalIngresos() > 0
+    ? totalEgresos() / totalIngresos()
+    : 0;
+
 
     document.getElementById("presupuesto").innerHTML = formatoMoneda(presupuesto);
     document.getElementById("porcentaje").innerHTML = formatoPorcentaje(porcentajeEgreso);
