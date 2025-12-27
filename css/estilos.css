@@ -256,3 +256,27 @@ h2 {
 .elemento:hover .elemento_eliminar--btn { display: block; }
 .elemento:hover .elemento_valor { transform: translateX(-20px); }
 .elemento:hover .elemento_porcentaje { transform: translateX(-20px); }
+
+/* ===== RESPONSIVE PARA CELULAR ===== */
+@media (max-width: 768px) {
+
+  .presupuesto_ingreso,
+  .presupuesto_egreso {
+    float: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .presupuesto_ingreso .derecha,
+  .presupuesto_egreso .derecha {
+    float: none;
+    text-align: right;
+  }
+
+  .presupuesto {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+}
