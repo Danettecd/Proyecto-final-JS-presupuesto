@@ -32,10 +32,9 @@ body {
     padding-top: 150px;
     padding-bottom: 100px;
     color: #fff;
-    background: url(fondo.png), #7b4397;
-    background: url(fondo.png), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
-    background: url(fondo.png), linear-gradient(to left, #7b4397, #dc2430)
+    background: url(fondo.png), linear-gradient(to left, #7b4397, #dc2430);
 }
+
 
 .presupuesto {
     position: absolute;
@@ -257,27 +256,69 @@ h2 {
 .elemento:hover .elemento_valor { transform: translateX(-20px); }
 .elemento:hover .elemento_porcentaje { transform: translateX(-20px); }
 
-/* ===== RESPONSIVE PARA CELULAR ===== */
+
+/* ====== FIX RESPONSIVE CELULAR ====== */
 @media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* CABECERO */
+  .cabecero {
+    height: auto;
+    padding: 40px 20px 30px;
+  }
+
   .presupuesto {
+    position: static;
+    width: 100%;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .presupuesto_titulo h1 {
+    font-size: 26px;
+  }
+
+  .presupuesto_titulo p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .presupuesto_valor {
+    font-size: 36px;
+  }
+
+  /* INGRESOS / EGRESOS CABECERO */
+  .presupuesto_ingreso,
+  .presupuesto_egreso {
+    margin: 10px 0;
+  }
+
+  /* FORMULARIO */
+  .agregar_contenedor {
+    display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
-  .ingresos,
-  .egresos {
+  .agregar_descripcion,
+  .agregar_valor {
     width: 100%;
   }
-}
 
-
-@media (max-width: 768px) {
-  .cabecero {
-    padding-top: 40px;
+  /* CONTENEDOR LISTAS */
+  .contenedor {
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
   }
-}
-@media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
+
+  .ingreso,
+  .egreso {
+    float: none;
+    width: 100%;
+    margin: 0 0 30px 0;
   }
 }
