@@ -259,24 +259,25 @@ h2 {
 
 /* ===== RESPONSIVE PARA CELULAR ===== */
 @media (max-width: 768px) {
-
-  .presupuesto_ingreso,
-  .presupuesto_egreso {
-    float: none;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .presupuesto_ingreso .derecha,
-  .presupuesto_egreso .derecha {
-    float: none;
-    text-align: right;
-  }
-
   .presupuesto {
-    width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
+    flex-direction: column;
+    gap: 10px;
   }
 
+  .ingresos,
+  .egresos {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cabecero {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
 }
